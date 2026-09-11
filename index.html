@@ -4,156 +4,193 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Epsilon Club | IIT Bhilai</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
         .mono { font-family: 'JetBrains Mono', monospace; }
+        
+        /* Subtle background grid pattern */
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+        }
     </style>
 </head>
-    <style>
-        body {
-            font-family: 'Inter', Arial, sans-serif;
-            padding: 24px;
-        }
-        
-        .header-nav {
-            margin-bottom: 40px;
-        }
+<body class="bg-gray-950 text-gray-300 antialiased selection:bg-cyan-500 selection:text-white relative">
 
-        .club-name {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 8px;
-        }
+    <!-- Fixed Background -->
+    <div class="fixed inset-0 bg-grid pointer-events-none z-0"></div>
+    <div class="fixed inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-cyan-900/10 via-gray-950 to-gray-950 pointer-events-none z-0"></div>
 
-        .nav-links a {
-            text-decoration: none;
-            color: #0056b3;
-            font-weight: 600;
-            margin-right: 16px;
-            
-        }
-
-        .nav-links a:hover {
-            text-decoration: underline;
-        }
-
-        .subtitle {
-            font-size: 0.9rem;
-            color: #555;
-            margin-top: 8px;
-        }
-
-        .slogan {
-            font-size: 1rem;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-top: 0;
-        }
-    </style>
-
-
-    <div class="header-nav">
-        <div class="club-name">EPSILON
-            <h3 class="slogan">
-            Imagine,
-            Invent, Inspire.
-            </h3>
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 border-b border-gray-800/60 bg-gray-950/70 backdrop-blur-xl">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <img src="https://roboticsclub.iitbhilai.ac.in/images/epsilon-logo.png" alt="Epsilon Logo" class="h-10 w-10 object-contain">
+                <div class="text-cyan-400 font-bold text-xl tracking-tight">EPSILON</div>
+            </div>
+            <div class="hidden md:flex space-x-8 text-sm font-semibold text-gray-400 items-center">
+                <a href="#about" class="hover:text-cyan-400 transition">About</a>
+                <a href="#projects" class="hover:text-cyan-400 transition">Projects</a>
+                <a href="#join" class="px-5 py-2.5 bg-cyan-500/10 text-cyan-400 rounded-lg border border-cyan-500/30 hover:bg-cyan-500 hover:text-gray-950 transition-all duration-300">Join the Club</a>
+            </div>
         </div>
-        <div class="nav-links">
-            <a href="#about">About</a> 
-            <a href="#projects">Projects</a> 
-            <a href="#join">Join the Club</a>
-        </div>
-        <div class="subtitle">Official Robotics Club of IIT Bhilai</div>
-    </div>
-            <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
-                Engineering in Motion.
-We are the nexus of mechanical design, control systems, and automation. We don't just write algorithms; we design, machine, and assemble the physical hardware that brings logic to the real world.
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center pt-20 px-6 relative z-10">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full border border-cyan-800/50 bg-cyan-950/30 text-cyan-400 text-xs font-semibold tracking-wider uppercase backdrop-blur-sm">
+                <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+                Official Robotics Club of IIT Bhilai
+            </div>
+            <h1 class="text-6xl md:text-8xl font-extrabold text-white tracking-tight mb-8 leading-tight">
+                Imagine. <br> Invent. <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600">Inspire.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
+                Engineering in Motion. We are the nexus of mechanical design, control systems, and automation. We don't just write algorithms; we design, machine, and assemble the physical hardware that brings logic to the real world.
             </p>
-            <a href="#about" class="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-gray-950 bg-cyan-400 rounded-md hover:bg-cyan-300 transition duration-200 shadow-[0_0_30px_-5px_rgba(34,211,238,0.4)]">
+            <a href="#about" class="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-gray-950 bg-cyan-400 rounded-lg hover:bg-cyan-300 hover:-translate-y-1 transition-all duration-300 shadow-[0_0_40px_-10px_rgba(34,211,238,0.5)]">
                 Execute Routine ↓
             </a>
         </div>
     </section>
 
-    <section id="about" class="py-24 px-6 bg-gray-900 border-y border-gray-800">
+    <!-- About Section -->
+    <section id="about" class="py-32 px-6 border-y border-gray-800/60 bg-gray-900/40 relative z-10 backdrop-blur-sm">
         <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-sm font-bold text-cyan-400 tracking-widest uppercase mb-2 mono">Initialization</h2>
-            <h3 class="text-4xl font-bold text-white mb-6">From Blueprint to Reality.</h3>
-            <p class="text-gray-400 leading-relaxed mb-6">
-                Epsilon operates at the intersection of mechanical fabrication and embedded systems. As the flagship robotics division of the Science & Technology Council, we provide the workspace, machinery, and funding to transform CAD assemblies into functional machines.
-            </p>
-            <p class="text-gray-400 leading-relaxed">
-                Whether it is prototyping custom chassis, tuning differential steering mechanisms, or integrating high-torque actuators, this is where theoretical engineering meets raw hardware. Experience is not mandatory; a drive to build physical systems is.
-            </p>
+            <div class="flex flex-col items-center justify-center mb-10">
+                <span class="text-cyan-500/20 font-mono text-6xl font-black mb-[-2rem] select-none">01</span>
+                <h2 class="text-sm font-bold text-cyan-400 tracking-widest uppercase mono relative z-10">Initialization</h2>
+            </div>
+            <h3 class="text-4xl md:text-5xl font-bold text-white mb-8">From Blueprint to Reality.</h3>
+            
+            <div class="space-y-6 text-lg text-gray-400 leading-relaxed max-w-3xl mx-auto">
+                <p>
+                    Epsilon operates at the intersection of mechanical fabrication and embedded systems. As the flagship robotics division of the Science & Technology Council, we provide the workspace, machinery, and funding to transform CAD assemblies into functional machines.
+                </p>
+                <p>
+                    Whether it is prototyping custom chassis, tuning differential steering mechanisms, or integrating high-torque actuators, this is where theoretical engineering meets raw hardware. Experience is not mandatory; a drive to build physical systems is.
+                </p>
+            </div>
         </div>
     </section>
 
-    <section id="projects" class="py-24 px-6">
+    <!-- Projects Section -->
+    <section id="projects" class="py-32 px-6 relative z-10">
         <div class="max-w-6xl mx-auto">
-            <h3 class="text-4xl font-bold text-white mb-16">What we build.</h3>
+            <div class="mb-16">
+                <h2 class="text-sm font-bold text-cyan-400 tracking-widest uppercase mb-2 mono">02 // Projects</h2>
+                <h3 class="text-4xl md:text-5xl font-bold text-white">What we build.</h3>
+            </div>
             
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-gray-900 border border-gray-800 rounded-xl p-8 hover:border-cyan-500/50 transition">
-                    <h4 class="text-xl font-bold text-white mb-3">Mechanical Design & Fabrication</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        Drafting complex kinematic models using Fusion 360 and other softwares. We take parts from screen to workshop—leveraging 3D printing for rapid iteration and utilizing hands-on manual prototyping to shape and assemble custom structural components.
-                    </p>
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="group relative bg-gray-900/50 border border-gray-800 rounded-2xl p-8 hover:bg-gray-800/50 hover:border-cyan-500/30 transition-all duration-300 overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="text-cyan-500/10 font-mono text-5xl font-black absolute right-4 top-4 group-hover:text-cyan-500/20 transition-colors duration-300">SYS</div>
+                    <div class="relative z-10">
+                        <div class="h-12 w-12 rounded-lg bg-gray-800 border border-gray-700 flex items-center justify-center mb-6 group-hover:border-cyan-500/50 transition-colors duration-300">
+                            <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-4">Mechanical Design & Fabrication</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Drafting complex kinematic models using Fusion 360 and other softwares. We take parts from screen to workshop—leveraging 3D printing for rapid iteration and utilizing hands-on manual prototyping to shape and assemble custom structural components.
+                        </p>
+                    </div>
                 </div>
-                <div class="bg-gray-900 border border-gray-800 rounded-xl p-8 hover:border-cyan-500/50 transition">
-                    <h4 class="text-xl font-bold text-white mb-3">Control Systems & Power</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        Designing the nervous system of our machines. This covers wiring high-current relay-based H-bridge motor drivers, integrating ESP32 microcontrollers, and tuning closed-loop feedback to achieve precise physical control over mechanical joints.
-                    </p>
+
+                <!-- Card 2 -->
+                <div class="group relative bg-gray-900/50 border border-gray-800 rounded-2xl p-8 hover:bg-gray-800/50 hover:border-cyan-500/30 transition-all duration-300 overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="text-cyan-500/10 font-mono text-5xl font-black absolute right-4 top-4 group-hover:text-cyan-500/20 transition-colors duration-300">PWR</div>
+                    <div class="relative z-10">
+                        <div class="h-12 w-12 rounded-lg bg-gray-800 border border-gray-700 flex items-center justify-center mb-6 group-hover:border-cyan-500/50 transition-colors duration-300">
+                            <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-4">Control Systems & Power</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Designing the nervous system of our machines. This covers wiring high-current relay-based H-bridge motor drivers, integrating ESP32 microcontrollers, and tuning closed-loop feedback to achieve precise physical control over mechanical joints.
+                        </p>
+                    </div>
                 </div>
-                <div class="bg-gray-900 border border-gray-800 rounded-xl p-8 hover:border-cyan-500/50 transition">
-                    <h4 class="text-xl font-bold text-white mb-3">Competitive Robotics</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        Engineering durable, high-performance machines for flagship arenas like Robo-Carnival. From autonomous terrain rovers to heavy-duty Robo Soccer platforms, we build systems designed to outmaneuver and outlast the competition.
-                    </p>
+
+                <!-- Card 3 -->
+                <div class="group relative bg-gray-900/50 border border-gray-800 rounded-2xl p-8 hover:bg-gray-800/50 hover:border-cyan-500/30 transition-all duration-300 overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="text-cyan-500/10 font-mono text-5xl font-black absolute right-4 top-4 group-hover:text-cyan-500/20 transition-colors duration-300">CMP</div>
+                    <div class="relative z-10">
+                        <div class="h-12 w-12 rounded-lg bg-gray-800 border border-gray-700 flex items-center justify-center mb-6 group-hover:border-cyan-500/50 transition-colors duration-300">
+                            <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-4">Competitive Robotics</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Engineering durable, high-performance machines for flagship arenas like Robo-Carnival. From autonomous terrain rovers to heavy-duty Robo Soccer platforms, we build systems designed to outmaneuver and outlast the competition.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="join" class="py-24 px-6 bg-cyan-950/20 border-t border-cyan-900/30">
-        <div class="max-w-3xl mx-auto text-center">
-            <h2 class="text-sm font-bold text-cyan-400 tracking-widest uppercase mb-2 mono">Connect with us</h2>
-            <h3 class="text-4xl font-bold text-white mb-6">Open to All. Built for the Best.</h3>
-            <p class="text-gray-400 mb-10">
-                Epsilon is an open community. We conduct regular, hands-on workshops throughout the year for anyone interested in robotics—no official membership required.
-            </p>
+    <!-- Join Section -->
+    <section id="join" class="py-32 px-6 border-t border-gray-800/60 bg-gradient-to-b from-gray-900/40 to-gray-950 relative z-10">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-sm font-bold text-cyan-400 tracking-widest uppercase mb-4 mono">03 // Connect with us</h2>
+                <h3 class="text-4xl md:text-5xl font-bold text-white">Open to All. Built for the Best.</h3>
+            </div>
 
+            <div class="grid md:grid-cols-2 gap-12 mb-16">
+                <div class="bg-gray-900/30 p-8 rounded-2xl border border-gray-800">
+                    <h4 class="text-2xl font-bold text-white mb-4">The Community</h4>
+                    <p class="text-gray-400 leading-relaxed mb-6">
+                        Epsilon is an open community. We conduct regular, hands-on workshops throughout the year for anyone interested in robotics—no official membership required.
+                    </p>
+                    <h4 class="text-xl font-bold text-white mb-3">Core Member Benefits</h4>
+                    <ul class="text-gray-400 space-y-2 list-disc list-inside">
+                        <li>Exclusive access to club hardware</li>
+                        <li>External competition representation</li>
+                        <li>Dedicated senior mentorship</li>
+                    </ul>
+                </div>
 
-            <h3 class="text-4xl font-bold text-white mb-6">Core Member Benefits</h3>
-            <p class="text-gray-400 mb-10">
-                Official members gain exclusive access to club hardware, the right to represent IIT Bhilai in external competitions, and a dedicated senior mentor to accelerate their technical development.
-            </p>
-            
-            <h3 class="text-4xl font-bold text-white mb-6">The Induction Protocol:</h3>
-            <ol class="text-gray-400 mb-10 list-decimal list-inside space-y-2 inline-block text-left">
-                <li>Attend the Epsilon Club Intro Session.</li>
-                <li>Submit the Official Membership Form.</li>
-                <li>Clear the Technical & General Interviews.</li>
-            </ol>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="https://instagram.com/epsilon_iitbhilai" target="_blank" class="px-8 py-4 bg-white text-gray-950 font-bold rounded-md hover:bg-gray-200 transition">
+                <div class="bg-gray-900/30 p-8 rounded-2xl border border-gray-800 relative overflow-hidden">
+                    <div class="absolute right-0 top-0 w-32 h-32 bg-cyan-500/5 blur-[80px] rounded-full"></div>
+                    <h4 class="text-2xl font-bold text-white mb-6">The Induction Protocol</h4>
+                    <ol class="text-gray-400 space-y-6 mono text-sm">
+                        <li class="flex gap-4">
+                            <span class="text-cyan-500 font-bold">01_</span>
+                            <span>Attend the Epsilon Club Intro Session.</span>
+                        </li>
+                        <li class="flex gap-4">
+                            <span class="text-cyan-500 font-bold">02_</span>
+                            <span>Submit the Official Membership Form.</span>
+                        </li>
+                        <li class="flex gap-4">
+                            <span class="text-cyan-500 font-bold">03_</span>
+                            <span>Clear the Technical & General Interviews.</span>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-6">
+                <a href="https://instagram.com/epsilon_iitbhilai" target="_blank" class="px-8 py-4 bg-white text-gray-950 font-bold rounded-lg hover:bg-gray-200 hover:scale-105 transition-all duration-300 text-center">
                     Follow on Instagram
                 </a>
-            </div>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="https://roboticsclub.iitbhilai.ac.in/" target="_blank" class="px-8 py-4 bg-white text-gray-950 font-bold rounded-md hover:bg-gray-200 transition">
+                <a href="https://roboticsclub.iitbhilai.ac.in/" target="_blank" class="px-8 py-4 bg-gray-900 text-white font-bold rounded-lg border border-gray-700 hover:border-cyan-500 hover:text-cyan-400 transition-all duration-300 text-center">
                     Official Website
                 </a>
             </div>
-            
         </div>
     </section>
 
-    <footer class="py-8 border-t border-gray-900 text-center text-gray-600 text-sm mono">
-        <p>Built for OpenLake HelloWorld Hackathon.</p>
+    <!-- Footer -->
+    <footer class="py-8 border-t border-gray-800/60 text-center relative z-10 bg-gray-950">
+        <p class="text-gray-500 text-sm mono">Built for OpenLake HelloWorld Hackathon.</p>
     </footer>
 
 </body>
